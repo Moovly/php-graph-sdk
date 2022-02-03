@@ -184,7 +184,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate
      *
      * @return bool
      */
-    public function offsetExists($key): bool
+    public function offsetExists(mixed $key): bool
     {
         return array_key_exists($key, $this->items);
     }
@@ -196,7 +196,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate
      *
      * @return mixed
      */
-    public function offsetGet($key)
+    public function offsetGet(mixed $key): mixed
     {
         return $this->items[$key];
     }
@@ -209,7 +209,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate
      *
      * @return void
      */
-    public function offsetSet($key, $value): void
+    public function offsetSet(mixed $key, mixed $value): void
     {
         if (is_null($key)) {
             $this->items[] = $value;
@@ -225,7 +225,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate
      *
      * @return void
      */
-    public function offsetUnset($key): void
+    public function offsetUnset(mixed $key): void
     {
         unset($this->items[$key]);
     }
